@@ -1,12 +1,20 @@
 import 'dotenv/config';
 import express from 'express';
-import routes from './src/routes';
 import 'regenerator-runtime/runtime.js';
+import connectDb from './src/db/database';
+import routes from './src/routes';
 
 let app;
 
 const applyMiddleWares = () => {
-  app.use('/', routes);
+  app.use(
+    '/api/',
+    (req, res, next) => {
+      res.type('application/json');
+      next();
+    },
+    routes
+  );
 };
 
 const startServer = () => {
@@ -22,9 +30,17 @@ const startServer = () => {
   if (process.env.NODE_ENV === 'development') {
     const { default: devApp } = await import('./dev-middleware');
     app = devApp;
-    startServer();
+    connectDb()
+      .then(() => {
+        startServer();
+      })
+      .catch((err) => console.log(err));
   } else {
     app = express();
-    startServer();
+    connectDb()
+      .then(() => {
+        startServer();
+      })
+      .catch((err) => console.log(err));
   }
 })();
