@@ -7,6 +7,8 @@ import routes from './src/routes';
 let app;
 
 const applyMiddleWares = () => {
+  app.use(express.json());
+  
   app.use(
     '/api/',
     (req, res, next) => {
