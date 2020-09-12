@@ -8,6 +8,9 @@ const projectSchema = new Schema({
   slug: {
     type: String,
     lowercase: true,
+    required: true,
+    unique: true,
+    index: true,
   },
   languages: [String],
 });
