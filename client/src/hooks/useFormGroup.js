@@ -13,6 +13,7 @@ function useFormGroup(props) {
         return <Select {...inputProps} />;
       case 'button':
       case 'submit':
+      case 'reset':
         return <Button {...inputProps} />;
       default:
         return <Input {...inputProps} />;

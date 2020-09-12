@@ -46,7 +46,7 @@ npm run start:dev
 
 Or, yarn users, run: `yarn start:dev`
 
-This will start the server at `http://localhost:3000`. We can use [PostMan](https://www.postman.com/downloads/) to interact with the APIs.
+This will start the server at `http://localhost:3001`. We can use [PostMan](https://www.postman.com/downloads/) to interact with the APIs.
 
 ### In Production mode
 

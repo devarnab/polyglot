@@ -1,10 +1,10 @@
 import React from 'react';
-import AddProject from './components/organisms/AddProject';
+import AddProjectForm from './components/organisms/AddProjectForm';
 
 function App() {
   return (
     <div className="App">
-      <AddProject />
+      <AddProjectForm />
     </div>
   );
 }
