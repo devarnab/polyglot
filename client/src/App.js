@@ -1,9 +1,10 @@
 import React from 'react';
+import AddProject from './components/organisms/AddProject';
 
 function App() {
   return (
     <div className="App">
-      lorem30
+      <AddProject />
     </div>
   );
 }
